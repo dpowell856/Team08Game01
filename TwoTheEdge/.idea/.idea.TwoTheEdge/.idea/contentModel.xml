@@ -43123,8 +43123,35 @@
         <e p="UE4.vcxproj" t="IncludeRecursive" />
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="Plugins" t="Include">
+        <e p="UnrealCLR" t="Include">
+          <e p="Resources" t="Include">
+            <e p="Icon128.png" t="Include" />
+          </e>
+          <e p="Source" t="Include">
+            <e p="UnrealCLR" t="Include">
+              <e p="Private" t="Include">
+                <e p="UnrealCLR.cpp" t="Include" />
+                <e p="UnrealCLRFramework.cpp" t="Include" />
+                <e p="UnrealCLRLibrary.cpp" t="Include" />
+                <e p="UnrealCLRManager.cpp" t="Include" />
+              </e>
+              <e p="Public" t="Include">
+                <e p="UnrealCLR.h" t="Include" />
+                <e p="UnrealCLRFramework.h" t="Include" />
+                <e p="UnrealCLRLibrary.h" t="Include" />
+                <e p="UnrealCLRManager.h" t="Include" />
+              </e>
+              <e p="UnrealCLR.Build.cs" t="Include" />
+            </e>
+          </e>
+          <e p="UnrealCLR.uplugin" t="Include" />
+        </e>
+      </e>
       <e p="Source" t="Include">
         <e p="TwoTheEdge" t="Include">
+          <e p="LobbyPlayerController.cpp" t="Include" />
+          <e p="LobbyPlayerController.h" t="Include" />
           <e p="TwoTheEdge.Build.cs" t="Include" />
           <e p="TwoTheEdge.cpp" t="Include" />
           <e p="TwoTheEdge.h" t="Include" />
