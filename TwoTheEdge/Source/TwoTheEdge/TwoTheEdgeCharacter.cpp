@@ -81,11 +81,11 @@ void ATwoTheEdgeCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &ATwoTheEdgeCharacter::DoUnCrouch);
 
 	// Sprint
-	PlayerInputComponent->BindAction("Sprint", IE_Pressed, ExtraMovement, &UExtraMovementComponent::Sprint);
-	PlayerInputComponent->BindAction("Sprint", IE_Released, ExtraMovement, &UExtraMovementComponent::Walk);
+	PlayerInputComponent->BindAction("Sprint", IE_Pressed, this, &ATwoTheEdgeCharacter::Sprint);
+	PlayerInputComponent->BindAction("Sprint", IE_Released, this, &ATwoTheEdgeCharacter::Walk);
 
 	// Forward dash
-	PlayerInputComponent->BindAction("ForwardDash", IE_Pressed, ExtraMovement, &UExtraMovementComponent::ForwardDash);
+	PlayerInputComponent->BindAction("ForwardDash", IE_Pressed, this, &ATwoTheEdgeCharacter::ForwardDash);
 }
 
 void ATwoTheEdgeCharacter::OnResetVR()
@@ -110,8 +110,25 @@ void ATwoTheEdgeCharacter::DoCrouch()
 
 void ATwoTheEdgeCharacter::DoUnCrouch()
 {
-
 	UnCrouch(true);
+}
+
+void ATwoTheEdgeCharacter::Sprint()
+{
+	ExtraMovement->Sprint();
+	OnSprint(true);
+}
+
+void ATwoTheEdgeCharacter::Walk()
+{
+	ExtraMovement->Walk();
+	OnSprint(false);
+}
+
+void ATwoTheEdgeCharacter::ForwardDash()
+{
+	ExtraMovement->ForwardDash();
+	OnForwardDash();
 }
 
 void ATwoTheEdgeCharacter::TurnAtRate(float Rate)

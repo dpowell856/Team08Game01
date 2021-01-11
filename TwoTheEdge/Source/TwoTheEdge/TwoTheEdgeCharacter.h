@@ -65,6 +65,17 @@ protected:
 	/** Called to crouch */
 	void DoCrouch();
 	void DoUnCrouch();
+
+	/** Called to sprint */
+	void Sprint();
+	void Walk();
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnSprint(bool IsSprinting);
+
+	/** Called to forward dash */
+	void ForwardDash();
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnForwardDash();
 	
 protected:
 	// APawn interface
