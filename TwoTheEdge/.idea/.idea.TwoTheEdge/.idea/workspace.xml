@@ -24,9 +24,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4372eb3-064e-41e7-9110-974e2690450e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_Character.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_Character.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Widgets/WBP_MainMenu.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Widgets/WBP_MainMenu.uasset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +39,11 @@
       <list>
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/LobbyPlayerController.h" />
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/LobbyPlayerController.cpp" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.h" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.cpp" />
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.h" />
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.cpp" />
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.h" />
+        <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.h" />
+        <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.cpp" />
       </list>
     </option>
   </component>
@@ -286,7 +284,7 @@
       <workItem from="1610295311748" duration="599000" />
       <workItem from="1610316109086" duration="1821000" />
       <workItem from="1610319555442" duration="128000" />
-      <workItem from="1610356695135" duration="11031000" />
+      <workItem from="1610356695135" duration="14432000" />
     </task>
     <servers />
   </component>
