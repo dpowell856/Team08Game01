@@ -43161,6 +43161,8 @@
           <e p="TwoTheEdgeCharacter.h" t="Include" />
           <e p="TwoTheEdgeGameMode.cpp" t="Include" />
           <e p="TwoTheEdgeGameMode.h" t="Include" />
+          <e p="TwoTheEdgePlayerState.cpp" t="Include" />
+          <e p="TwoTheEdgePlayerState.h" t="Include" />
         </e>
         <e p="TwoTheEdge.Target.cs" t="Include" />
         <e p="TwoTheEdgeEditor.Target.cs" t="Include" />
