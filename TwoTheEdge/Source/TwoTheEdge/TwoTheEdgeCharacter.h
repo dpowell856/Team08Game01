@@ -76,6 +76,7 @@ protected:
 	void ForwardDash();
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnForwardDash();
+
 	
 protected:
 	// APawn interface

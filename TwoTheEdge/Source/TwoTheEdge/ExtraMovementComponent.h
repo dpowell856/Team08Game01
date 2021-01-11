@@ -43,8 +43,8 @@ public:
 
 	UFUNCTION(Server, Reliable)
     void ChangeWalkSpeed(float NewSpeed);
-	
-	/** Requests the player to dash */
+
+	/** Server side dash logic */
 	UFUNCTION(Server, Reliable)
 	void ForwardDash();
 
@@ -53,4 +53,5 @@ private:
 	class ATwoTheEdgeCharacter* Character;
 	FTimerHandle DashDelayHandle;
 	bool bSprinting = false;
+	bool bDashing;
 };

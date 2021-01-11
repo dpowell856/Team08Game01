@@ -3,3 +3,9 @@
 
 #include "TwoTheEdgePlayerState.h"
 
+#include "Kismet/KismetMathLibrary.h"
+
+void ATwoTheEdgePlayerState::AddDashCharge(const int Amount)
+{
+    DashCharges = UKismetMathLibrary::Min(DashCharges + Amount, 3);
+}

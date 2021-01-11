@@ -58,7 +58,6 @@ void UExtraMovementComponent::Walk()
 
 void UExtraMovementComponent::ChangeWalkSpeed_Implementation(float NewSpeed)
 {
-	UE_LOG(LogTemp, Warning, TEXT("LOL"));
 	BaseMovementComponent->MaxWalkSpeed = NewSpeed;
 }
 

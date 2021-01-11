@@ -9,9 +9,12 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "ExtraMovementComponent.h"
+#include "TwoTheEdgePlayerState.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ATwoTheEdgeCharacter
+
+class ATwoTheEdgePlayerState;
 
 ATwoTheEdgeCharacter::ATwoTheEdgeCharacter()
 {
@@ -127,7 +130,15 @@ void ATwoTheEdgeCharacter::Walk()
 
 void ATwoTheEdgeCharacter::ForwardDash()
 {
-	ExtraMovement->ForwardDash();
+	ATwoTheEdgePlayerState* CastedPlayerState = GetPlayerState<ATwoTheEdgePlayerState>();
+	
+	if (CastedPlayerState->DashCharges > 0)
+	{
+		ExtraMovement->ForwardDash();
+		CastedPlayerState->DashCharges--;
+	}
+
+	// Blueprint event.
 	OnForwardDash();
 }
 
