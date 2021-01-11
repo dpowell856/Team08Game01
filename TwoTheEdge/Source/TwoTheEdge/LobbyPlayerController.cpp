@@ -11,7 +11,7 @@ void ALobbyPlayerController::StartGame()
     if (GetWorld()->GetGameState()->HasAuthority())
     {
         // Tells the server to change to the arena map.
-        GetWorld()->ServerTravel(TEXT("Dans_Test_Level"), false, false);
+        GetWorld()->ServerTravel(TEXT("Map2"), false, false);
     }
     else
     {
