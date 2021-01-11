@@ -41,11 +41,16 @@ public:
 	/** Requests the player to walk */
 	void Walk();
 
+	UFUNCTION(Server, Reliable)
+    void ChangeWalkSpeed(float NewSpeed);
+	
 	/** Requests the player to dash */
+	UFUNCTION(Server, Reliable)
 	void ForwardDash();
 
 private:
 	float MaxWalkSpeed;
 	class ATwoTheEdgeCharacter* Character;
 	FTimerHandle DashDelayHandle;
+	bool bSprinting = false;
 };

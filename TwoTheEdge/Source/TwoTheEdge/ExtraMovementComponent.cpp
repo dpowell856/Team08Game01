@@ -40,15 +40,29 @@ void UExtraMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType
 
 void UExtraMovementComponent::Sprint()
 {
-	BaseMovementComponent->MaxWalkSpeed = SprintSpeed;
+	if (bSprinting)
+		return;
+	
+	ChangeWalkSpeed(SprintSpeed);
+	bSprinting = true;
 }
 
 void UExtraMovementComponent::Walk()
 {
-	BaseMovementComponent->MaxWalkSpeed = MaxWalkSpeed;
+	if (!bSprinting)
+		return;
+	
+	ChangeWalkSpeed(MaxWalkSpeed);
+	bSprinting = false;
 }
 
-void UExtraMovementComponent::ForwardDash()
+void UExtraMovementComponent::ChangeWalkSpeed_Implementation(float NewSpeed)
+{
+	UE_LOG(LogTemp, Warning, TEXT("LOL"));
+	BaseMovementComponent->MaxWalkSpeed = NewSpeed;
+}
+
+void UExtraMovementComponent::ForwardDash_Implementation()
 {
 	// On cooldown.
 	if (GetWorld()->GetTimerManager().IsTimerActive(DashDelayHandle))
@@ -56,7 +70,7 @@ void UExtraMovementComponent::ForwardDash()
 
 	const FVector LaunchVelocity = Character->GetMesh()->GetRightVector() * DashPower;
 	Character->LaunchCharacter(LaunchVelocity, false, false);
-
+	
 	// Adds a delay.
 	GetWorld()->GetTimerManager().SetTimer(DashDelayHandle, DashDelay, false, -1);
 }
