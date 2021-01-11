@@ -8,6 +8,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "ExtraMovementComponent.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ATwoTheEdgeCharacter
@@ -16,7 +17,7 @@ ATwoTheEdgeCharacter::ATwoTheEdgeCharacter()
 {
 	// Set size for collision capsule
 	GetCapsuleComponent()->InitCapsuleSize(42.f, 96.0f);
-
+	
 	// set our turn rates for input
 	BaseTurnRate = 45.f;
 	BaseLookUpRate = 45.f;
@@ -74,8 +75,18 @@ void ATwoTheEdgeCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 
 	// VR headset functionality
 	PlayerInputComponent->BindAction("ResetVR", IE_Pressed, this, &ATwoTheEdgeCharacter::OnResetVR);
-}
 
+	// Crouch
+	PlayerInputComponent->BindAction("Crouch", IE_Pressed, this, &ATwoTheEdgeCharacter::DoCrouch);
+	PlayerInputComponent->BindAction("Crouch", IE_Released, this, &ATwoTheEdgeCharacter::DoUnCrouch);
+
+	// Sprint
+	PlayerInputComponent->BindAction("Sprint", IE_Pressed, ExtraMovement, &UExtraMovementComponent::Sprint);
+	PlayerInputComponent->BindAction("Sprint", IE_Released, ExtraMovement, &UExtraMovementComponent::Walk);
+
+	// Forward dash
+	PlayerInputComponent->BindAction("ForwardDash", IE_Pressed, ExtraMovement, &UExtraMovementComponent::ForwardDash);
+}
 
 void ATwoTheEdgeCharacter::OnResetVR()
 {
@@ -84,12 +95,23 @@ void ATwoTheEdgeCharacter::OnResetVR()
 
 void ATwoTheEdgeCharacter::TouchStarted(ETouchIndex::Type FingerIndex, FVector Location)
 {
-		Jump();
+	Jump();
 }
 
 void ATwoTheEdgeCharacter::TouchStopped(ETouchIndex::Type FingerIndex, FVector Location)
 {
-		StopJumping();
+	StopJumping();
+}
+
+void ATwoTheEdgeCharacter::DoCrouch()
+{
+	Crouch(true);
+}
+
+void ATwoTheEdgeCharacter::DoUnCrouch()
+{
+
+	UnCrouch(true);
 }
 
 void ATwoTheEdgeCharacter::TurnAtRate(float Rate)

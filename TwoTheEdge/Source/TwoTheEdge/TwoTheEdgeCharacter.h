@@ -18,6 +18,11 @@ class ATwoTheEdgeCharacter : public ACharacter
 	/** Follow camera */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
 	class UCameraComponent* FollowCamera;
+
+	/** Extra movement options */
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Movement, meta = (AllowPrivateAccess = "true"))
+	class UExtraMovementComponent* ExtraMovement;
+	
 public:
 	ATwoTheEdgeCharacter();
 
@@ -30,7 +35,6 @@ public:
 	float BaseLookUpRate;
 
 protected:
-
 	/** Resets HMD orientation in VR. */
 	void OnResetVR();
 
@@ -58,6 +62,10 @@ protected:
 	/** Handler for when a touch input stops. */
 	void TouchStopped(ETouchIndex::Type FingerIndex, FVector Location);
 
+	/** Called to crouch */
+	void DoCrouch();
+	void DoUnCrouch();
+	
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

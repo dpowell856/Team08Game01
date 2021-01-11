@@ -43150,6 +43150,8 @@
       </e>
       <e p="Source" t="Include">
         <e p="TwoTheEdge" t="Include">
+          <e p="ExtraMovementComponent.cpp" t="Include" />
+          <e p="ExtraMovementComponent.h" t="Include" />
           <e p="LobbyPlayerController.cpp" t="Include" />
           <e p="LobbyPlayerController.h" t="Include" />
           <e p="TwoTheEdge.Build.cs" t="Include" />
