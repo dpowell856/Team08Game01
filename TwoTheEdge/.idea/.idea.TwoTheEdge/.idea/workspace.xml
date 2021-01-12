@@ -25,10 +25,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f4372eb3-064e-41e7-9110-974e2690450e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Builds/WindowsNoEditor/Manifest_NonUFSFiles_Win64.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Builds/WindowsNoEditor/Manifest_NonUFSFiles_Win64.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Builds/WindowsNoEditor/TwoTheEdge/Content/Paks/TwoTheEdge-WindowsNoEditor.pak" beforeDir="false" afterPath="$PROJECT_DIR$/Builds/WindowsNoEditor/TwoTheEdge/Content/Paks/TwoTheEdge-WindowsNoEditor.pak" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/LobbyPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/LobbyPlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Actors/BP_DashPickup.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Actors/BP_DashPickup.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap.umap" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap_BuiltData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPersonCPP/Maps/ThirdPersonExampleMap_BuiltData.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,15 +46,15 @@
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/LobbyPlayerController.h" />
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/OnOverlap.h" />
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/OnOverlap.cpp" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.h" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.h" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.cpp" />
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/Pickup.h" />
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/Pickup.cpp" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.h" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.cpp" />
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.cpp" />
         <option value="$PROJECT_DIR$/Source/TwoTheEdge/LobbyPlayerController.cpp" />
+        <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.h" />
+        <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.h" />
+        <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.h" />
+        <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.cpp" />
+        <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.cpp" />
       </list>
     </option>
   </component>
@@ -294,6 +296,7 @@
       <workItem from="1610316109086" duration="1821000" />
       <workItem from="1610319555442" duration="128000" />
       <workItem from="1610356695135" duration="22908000" />
+      <workItem from="1610443156151" duration="1079000" />
     </task>
     <servers />
   </component>

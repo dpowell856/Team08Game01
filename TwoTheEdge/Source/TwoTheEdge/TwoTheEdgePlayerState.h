@@ -23,9 +23,15 @@ class TWOTHEEDGE_API ATwoTheEdgePlayerState : public APlayerState
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int DashCharges;
+	
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	float Stamina;
 
 	/** Safely add a dash charge */
 	UFUNCTION(BlueprintCallable)
 	void AddDashCharge(int Amount = 1);
-	
+
+	/** Safely add stamina */
+	UFUNCTION(BlueprintCallable)
+	void AddStamina(float Amount);
 };

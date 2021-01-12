@@ -4,6 +4,7 @@
 #include "ExtraMovementComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "TwoTheEdgeCharacter.h"
+#include "TwoTheEdgePlayerState.h"
 
 // Sets default values for this component's properties
 UExtraMovementComponent::UExtraMovementComponent()
@@ -36,11 +37,27 @@ void UExtraMovementComponent::TickComponent(float DeltaTime, ELevelTick TickType
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
 	// ...
+	if (bSprinting)
+	{
+		ATwoTheEdgePlayerState* PlayerState = Cast<ATwoTheEdgePlayerState>(Character->GetPlayerState());
+
+		// If stamina depleted, force walk.
+		PlayerState->Stamina -= DeltaTime;
+		if (PlayerState->Stamina <= 0.f)
+		{
+			PlayerState->Stamina = 0.f;
+			Walk();
+		}
+	}
 }
 
 void UExtraMovementComponent::Sprint()
 {
 	if (bSprinting)
+		return;
+
+	ATwoTheEdgePlayerState* PlayerState = Cast<ATwoTheEdgePlayerState>(Character->GetPlayerState());
+	if (PlayerState->Stamina <= 0.f)
 		return;
 	
 	ChangeWalkSpeed(SprintSpeed);

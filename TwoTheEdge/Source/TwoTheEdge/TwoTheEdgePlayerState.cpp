@@ -2,10 +2,14 @@
 
 
 #include "TwoTheEdgePlayerState.h"
-
 #include "Kismet/KismetMathLibrary.h"
 
 void ATwoTheEdgePlayerState::AddDashCharge(const int Amount)
 {
     DashCharges = UKismetMathLibrary::Min(DashCharges + Amount, 3);
+}
+
+void ATwoTheEdgePlayerState::AddStamina(const float Amount)
+{
+    Stamina = UKismetMathLibrary::Min(Stamina + Amount, 20.f);
 }
