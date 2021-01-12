@@ -38,14 +38,11 @@ public:
 	UClass* PlayerNameClass;
 
 protected:
-<<<<<<< Updated upstream
+
 <<<<<<< Updated upstream
 	virtual void BeginPlay() override;
-=======
 
->>>>>>> Stashed changes
 =======
-
 >>>>>>> Stashed changes
 	/** Resets HMD orientation in VR. */
 	void OnResetVR();
@@ -90,11 +87,11 @@ protected:
 	void OnForwardDash();
 
 <<<<<<< Updated upstream
-<<<<<<< Updated upstream
+
 	/** Creates the names over the players' heads */
 	UFUNCTION(Client, Reliable)
 	void CreatePlayerName();
-=======
+
 =======
 >>>>>>> Stashed changes
 	UFUNCTION(BlueprintCallable)
@@ -102,10 +99,9 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnRespawn();
 <<<<<<< Updated upstream
->>>>>>> Stashed changes
 =======
->>>>>>> Stashed changes
 
+>>>>>>> Stashed changes
 	
 protected:
 	// APawn interface
