@@ -24,9 +24,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4372eb3-064e-41e7-9110-974e2690450e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEngine.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEngine.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_Character.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_Character.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_Character_Dan.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_Character_Liam.uasset" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -294,7 +295,7 @@
       <workItem from="1610316109086" duration="1821000" />
       <workItem from="1610319555442" duration="128000" />
       <workItem from="1610356695135" duration="22908000" />
-      <workItem from="1610443156151" duration="13052000" />
+      <workItem from="1610443156151" duration="13658000" />
     </task>
     <servers />
   </component>
