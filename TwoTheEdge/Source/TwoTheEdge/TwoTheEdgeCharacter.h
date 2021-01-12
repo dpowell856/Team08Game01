@@ -39,7 +39,11 @@ public:
 
 protected:
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	virtual void BeginPlay() override;
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes
@@ -86,14 +90,20 @@ protected:
 	void OnForwardDash();
 
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	/** Creates the names over the players' heads */
 	UFUNCTION(Client, Reliable)
 	void CreatePlayerName();
 =======
+=======
+>>>>>>> Stashed changes
 	UFUNCTION(BlueprintCallable)
 	void Respawn();
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnRespawn();
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 	

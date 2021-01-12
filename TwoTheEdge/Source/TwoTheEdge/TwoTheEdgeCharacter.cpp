@@ -12,8 +12,12 @@
 #include "PlayerNameHeader.h"
 #include "TwoTheEdgePlayerState.h"
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 #include "Components/TextRenderComponent.h"
 #include "Kismet/GameplayStatics.h"
+=======
+#include "TwoTheEdgeGameMode.h"
+>>>>>>> Stashed changes
 =======
 #include "TwoTheEdgeGameMode.h"
 >>>>>>> Stashed changes
@@ -111,6 +115,7 @@ void ATwoTheEdgeCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 
 	// Respawn
 	PlayerInputComponent->BindAction("Respawn", IE_Pressed, this, &ATwoTheEdgeCharacter::Respawn);
+<<<<<<< Updated upstream
 }
 
 void ATwoTheEdgeCharacter::BeginPlay()
@@ -118,6 +123,8 @@ void ATwoTheEdgeCharacter::BeginPlay()
 	Super::BeginPlay();
 
 	CreatePlayerName();
+=======
+>>>>>>> Stashed changes
 }
 
 void ATwoTheEdgeCharacter::OnResetVR()
