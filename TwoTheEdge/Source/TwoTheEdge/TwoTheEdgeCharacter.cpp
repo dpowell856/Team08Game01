@@ -11,8 +11,12 @@
 #include "ExtraMovementComponent.h"
 #include "PlayerNameHeader.h"
 #include "TwoTheEdgePlayerState.h"
+<<<<<<< Updated upstream
 #include "Components/TextRenderComponent.h"
 #include "Kismet/GameplayStatics.h"
+=======
+#include "TwoTheEdgeGameMode.h"
+>>>>>>> Stashed changes
 
 //////////////////////////////////////////////////////////////////////////
 // ATwoTheEdgeCharacter
@@ -104,6 +108,9 @@ void ATwoTheEdgeCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 
 	// Forward dash
 	PlayerInputComponent->BindAction("ForwardDash", IE_Pressed, this, &ATwoTheEdgeCharacter::ForwardDash);
+
+	// Respawn
+	PlayerInputComponent->BindAction("Respawn", IE_Pressed, this, &ATwoTheEdgeCharacter::Respawn);
 }
 
 void ATwoTheEdgeCharacter::BeginPlay()
@@ -162,6 +169,11 @@ void ATwoTheEdgeCharacter::ForwardDash()
 
 	// Blueprint event.
 	OnForwardDash();
+}
+
+void ATwoTheEdgeCharacter::Respawn()
+{
+	OnRespawn();
 }
 
 void ATwoTheEdgeCharacter::TurnAtRate(float Rate)

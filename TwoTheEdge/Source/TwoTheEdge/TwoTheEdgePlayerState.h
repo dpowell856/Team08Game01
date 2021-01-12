@@ -15,8 +15,9 @@ class TWOTHEEDGE_API ATwoTheEdgePlayerState : public APlayerState
 	GENERATED_BODY()
 
 	public:
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
-	AActor* LastCheckpoint;
+	FTransform LastCheckpointPos;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int Deaths;
@@ -34,4 +35,11 @@ class TWOTHEEDGE_API ATwoTheEdgePlayerState : public APlayerState
 	/** Safely add stamina */
 	UFUNCTION(BlueprintCallable)
 	void AddStamina(float Amount);
+
+	UFUNCTION(BlueprintCallable)
+	void SetLastCheckpoint(FTransform Checkpoint);
+
+	UFUNCTION(BlueprintCallable)
+	FTransform GetLastCheckpoint();
+
 };

@@ -15,3 +15,14 @@ void ATwoTheEdgePlayerState::AddStamina(const float Amount)
     Stamina = UKismetMathLibrary::Min(Stamina + Amount, 20.f);
     GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("Stamina: %f"), Stamina));
 }
+
+void ATwoTheEdgePlayerState::SetLastCheckpoint(FTransform CheckpointPos)
+{
+    this->LastCheckpointPos = CheckpointPos;
+    GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, FString::Printf(TEXT("Checkpoint set %s"),*LastCheckpointPos.ToString()));
+}
+
+FTransform ATwoTheEdgePlayerState::GetLastCheckpoint()
+{
+    return this->LastCheckpointPos;
+}

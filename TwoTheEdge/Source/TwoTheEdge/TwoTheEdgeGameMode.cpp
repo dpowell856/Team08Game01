@@ -1,7 +1,6 @@
 // Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "TwoTheEdgeGameMode.h"
-#include "TwoTheEdgeCharacter.h"
 #include "UObject/ConstructorHelpers.h"
 
 ATwoTheEdgeGameMode::ATwoTheEdgeGameMode()
