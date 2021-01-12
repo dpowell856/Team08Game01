@@ -39,11 +39,8 @@ public:
 
 protected:
 
-<<<<<<< Updated upstream
 	virtual void BeginPlay() override;
 
-=======
->>>>>>> Stashed changes
 	/** Resets HMD orientation in VR. */
 	void OnResetVR();
 
@@ -86,22 +83,14 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnForwardDash();
 
-<<<<<<< Updated upstream
-
 	/** Creates the names over the players' heads */
 	UFUNCTION(Client, Reliable)
 	void CreatePlayerName();
 
-=======
->>>>>>> Stashed changes
 	UFUNCTION(BlueprintCallable)
 	void Respawn();
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnRespawn();
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 	
 protected:
 	// APawn interface
