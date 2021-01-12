@@ -34,7 +34,11 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
 	float BaseLookUpRate;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UClass* PlayerNameClass;
+
 protected:
+	virtual void BeginPlay() override;
 	/** Resets HMD orientation in VR. */
 	void OnResetVR();
 
@@ -76,6 +80,10 @@ protected:
 	void ForwardDash();
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnForwardDash();
+
+	/** Creates the names over the players' heads */
+	UFUNCTION(Client, Reliable)
+	void CreatePlayerName();
 
 	
 protected:

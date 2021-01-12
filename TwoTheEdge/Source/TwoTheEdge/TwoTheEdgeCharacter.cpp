@@ -9,7 +9,10 @@
 #include "GameFramework/Controller.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "ExtraMovementComponent.h"
+#include "PlayerNameHeader.h"
 #include "TwoTheEdgePlayerState.h"
+#include "Components/TextRenderComponent.h"
+#include "Kismet/GameplayStatics.h"
 
 //////////////////////////////////////////////////////////////////////////
 // ATwoTheEdgeCharacter
@@ -54,6 +57,18 @@ ATwoTheEdgeCharacter::ATwoTheEdgeCharacter()
 //////////////////////////////////////////////////////////////////////////
 // Input
 
+void ATwoTheEdgeCharacter::CreatePlayerName_Implementation()
+{
+	// Hide the player name text if it's the local player.
+	if (UGameplayStatics::GetPlayerCharacter(GetWorld(), 0) != this)
+	{
+		APlayerNameHeader* NameHeader = Cast<APlayerNameHeader>(
+			GetWorld()->SpawnActor(PlayerNameClass, &GetTransform()));
+
+		NameHeader->Initialise(TEXT("What"), FColor::Orange, this);
+	}
+}
+
 void ATwoTheEdgeCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	// Set up gameplay key bindings
@@ -89,6 +104,13 @@ void ATwoTheEdgeCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 
 	// Forward dash
 	PlayerInputComponent->BindAction("ForwardDash", IE_Pressed, this, &ATwoTheEdgeCharacter::ForwardDash);
+}
+
+void ATwoTheEdgeCharacter::BeginPlay()
+{
+	Super::BeginPlay();
+
+	CreatePlayerName();
 }
 
 void ATwoTheEdgeCharacter::OnResetVR()

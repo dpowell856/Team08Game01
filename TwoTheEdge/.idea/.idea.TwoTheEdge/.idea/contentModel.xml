@@ -43156,6 +43156,8 @@
           <e p="LobbyPlayerController.h" t="Include" />
           <e p="Pickup.cpp" t="Include" />
           <e p="Pickup.h" t="Include" />
+          <e p="PlayerNameHeader.cpp" t="Include" />
+          <e p="PlayerNameHeader.h" t="Include" />
           <e p="TwoTheEdge.Build.cs" t="Include" />
           <e p="TwoTheEdge.cpp" t="Include" />
           <e p="TwoTheEdge.h" t="Include" />
