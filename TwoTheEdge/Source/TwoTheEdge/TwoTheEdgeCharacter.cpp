@@ -14,13 +14,6 @@
 #include "Components/TextRenderComponent.h"
 #include "Kismet/GameplayStatics.h"
 #include "TwoTheEdgeGameMode.h"
-#include "TwoTheEdgeGameMode.h"
-#include "TwoTheEdgeGameMode.h"
-
-#include "TwoTheEdgeGameMode.h"
-
-#include "TwoTheEdgeGameMode.h"
-
 
 //////////////////////////////////////////////////////////////////////////
 // ATwoTheEdgeCharacter
@@ -115,8 +108,6 @@ void ATwoTheEdgeCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 
 	// Respawn
 	PlayerInputComponent->BindAction("Respawn", IE_Pressed, this, &ATwoTheEdgeCharacter::Respawn);
-
-
 }
 
 void ATwoTheEdgeCharacter::BeginPlay()

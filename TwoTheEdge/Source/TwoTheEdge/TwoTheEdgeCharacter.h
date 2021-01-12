@@ -91,7 +91,7 @@ protected:
 	void Respawn();
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnRespawn();
-
+	
 protected:
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
