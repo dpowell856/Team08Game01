@@ -89,8 +89,17 @@ protected:
 
 	UFUNCTION(BlueprintCallable)
 	void Respawn();
+	UFUNCTION(Server, Reliable)
+	void RespawnOnServer();
+	UFUNCTION(Client, Reliable)
+	void RespawnOnClient();
+	UFUNCTION(NetMulticast, Reliable)
+    void RespawnOnHost();
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnRespawn();
+
+	UFUNCTION(BlueprintCallable, Server, Reliable)
+	void TeleportOnServer(const FVector& DestLocation, const FRotator& DestRotation);
 	
 protected:
 	// APawn interface

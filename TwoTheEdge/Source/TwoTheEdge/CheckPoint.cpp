@@ -44,8 +44,11 @@ void ACheckPoint::OnOverLapBegin(UPrimitiveComponent* OverLappedComp, AActor* Ot
 	{
 		ATwoTheEdgeCharacter* Character = Cast<ATwoTheEdgeCharacter>(OtherActor);
 		ATwoTheEdgePlayerState* PlayerState = Cast<ATwoTheEdgePlayerState>(Character->GetPlayerState());
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "This Checkpoint works");
-		PlayerState->SetLastCheckpoint(this->GetActorTransform());
+		// PlayerState for whatever reason hasn't loaded yet.
+		if (!PlayerState)
+			return;
+		
+		PlayerState->SetLastCheckpoint(GetActorTransform());
 	}
 }
 

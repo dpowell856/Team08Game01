@@ -24,7 +24,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f4372eb3-064e-41e7-9110-974e2690450e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/GameModes/TwoTheEdgeGameModeTest.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/GameModes/TwoTheEdgeGameModeTest.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultGame.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultGame.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Anims.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Anims_PhysicsAsset.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Anims_Skeleton.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/CharacterAnimBlueprint.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/CrouchIdle_Anim.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Crouch_Anim.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/DisintegrateFunction.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Disintigrate.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Disintigrate_Inst.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Falling_Anim.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Flip_Anim.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Floor.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Green.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Idle_Anim.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Jump_Anim.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Land_Anim.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/ModelUnwrap.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/MovemetBlendSpace.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Purple.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Red.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/Run_Anim.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Animations/initialShadingGroup.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_Character_New.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Pawns/BP_Character_New.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/base_platform.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/base_platform.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Map2.umap" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Maps/Map2_BuiltData.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Maps/Map2_BuiltData.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Physics_Material/Ice.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Physics_Material/Slippy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Physics_Material/Slippy.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Physics_Material/Sticky.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Physics_Material/Sticky.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Physics_Material/Tar.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Textures/Cyan.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Textures/Fire.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Textures/Green.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Textures/ModelUnwrap_initialShadingGroup_BaseColor.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Textures/ModelUnwrap_initialShadingGroup_Normal.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Textures/ModelUnwrap_initialShadingGroup_OcclusionRoughnessMetallic.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Textures/Purple.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Textures/Red.uasset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/CheckPoint.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/CheckPoint.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/LobbyPlayerController.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/LobbyPlayerController.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,24 +81,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/LobbyPlayerController.h" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/OnOverlap.h" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/OnOverlap.cpp" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/Pickup.h" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/Pickup.cpp" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/LobbyPlayerController.cpp" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.h" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.h" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.cpp" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.cpp" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/PlayerNameHeader.h" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/PlayerNameHeader.cpp" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.h" />
-        <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.cpp" />
-      </list>
-    </option>
+    <changedPaths>
+      <option value="$PROJECT_DIR$/Source/TwoTheEdge/CheckPoint.cpp" />
+      <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.h" />
+      <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.cpp" />
+      <option value="$PROJECT_DIR$/Source/TwoTheEdge/LobbyPlayerController.cpp" />
+    </changedPaths>
   </component>
   <component name="ProjectId" id="1msvnxTmf687yng9rJAkWkMsEai" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -292,7 +326,8 @@
       <workItem from="1610316109086" duration="1821000" />
       <workItem from="1610319555442" duration="128000" />
       <workItem from="1610356695135" duration="22908000" />
-      <workItem from="1610443156151" duration="14585000" />
+      <workItem from="1610443156151" duration="15032000" />
+      <workItem from="1610494262282" duration="4245000" />
     </task>
     <servers />
   </component>

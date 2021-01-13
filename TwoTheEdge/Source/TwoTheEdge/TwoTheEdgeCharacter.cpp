@@ -57,19 +57,6 @@ ATwoTheEdgeCharacter::ATwoTheEdgeCharacter()
 
 //////////////////////////////////////////////////////////////////////////
 // Input
-
-void ATwoTheEdgeCharacter::CreatePlayerName_Implementation()
-{
-	// Hide the player name text if it's the local player.
-	if (UGameplayStatics::GetPlayerCharacter(GetWorld(), 0) != this)
-	{
-		APlayerNameHeader* NameHeader = Cast<APlayerNameHeader>(
-			GetWorld()->SpawnActor(PlayerNameClass, &GetTransform()));
-
-		NameHeader->Initialise(TEXT("What"), FColor::Orange, this);
-	}
-}
-
 void ATwoTheEdgeCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
 {
 	// Set up gameplay key bindings
@@ -170,8 +157,54 @@ void ATwoTheEdgeCharacter::ForwardDash()
 
 void ATwoTheEdgeCharacter::Respawn()
 {
+	// If host
+	if (HasAuthority())
+	{
+		// Shows respawn animation to self and other players.
+		RespawnOnHost();
+	}
+	else
+	{
+		// Shows respawn animation to other players.
+		RespawnOnServer();
+		// Shows respawn animation to self.
+		RespawnOnClient();
+	}
+}
+
+void ATwoTheEdgeCharacter::RespawnOnServer_Implementation()
+{
 	OnRespawn();
 }
+
+void ATwoTheEdgeCharacter::RespawnOnClient_Implementation()
+{
+	OnRespawn();
+}
+
+void ATwoTheEdgeCharacter::RespawnOnHost_Implementation()
+{
+	OnRespawn();
+}
+
+void ATwoTheEdgeCharacter::CreatePlayerName_Implementation()
+{
+	// Hide the player name text if it's the local player.
+	if (UGameplayStatics::GetPlayerCharacter(GetWorld(), 0) != this)
+	{
+		APlayerNameHeader* NameHeader = Cast<APlayerNameHeader>(
+            GetWorld()->SpawnActor(PlayerNameClass, &GetTransform()));
+
+		NameHeader->Initialise(TEXT("What?"), FColor::Orange, this);
+	}
+}
+
+void ATwoTheEdgeCharacter::TeleportOnServer_Implementation(const FVector& DestLocation, const FRotator& DestRotation)
+{
+	// Movement must be done on server.
+	TeleportTo(DestLocation, DestRotation);
+}
+
 
 void ATwoTheEdgeCharacter::TurnAtRate(float Rate)
 {
