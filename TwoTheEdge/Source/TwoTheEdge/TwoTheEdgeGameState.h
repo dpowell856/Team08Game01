@@ -21,6 +21,9 @@ class TWOTHEEDGE_API ATwoTheEdgeGameState : public AGameState
 	ANetworkCheats* NetworkCheats;
 
 	uint8 NextColour = 0;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	int32 NextWinPosition = 0;
 	
 	UFUNCTION(BlueprintCallable)
 	void BeginPlayDelayed();

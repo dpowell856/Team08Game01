@@ -23,6 +23,9 @@ class TWOTHEEDGE_API ATwoTheEdgePlayerState : public APlayerState
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	uint8 PlayerColour;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	int32 LocalPlayerIndex;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	FTransform LastCheckpointPos;
 
@@ -41,21 +44,25 @@ class TWOTHEEDGE_API ATwoTheEdgePlayerState : public APlayerState
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	float Stamina;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	bool Finished;
+
+	
 	/** Safely add a dash charge */
 	UFUNCTION(BlueprintCallable)
-	void AddDashCharge(int Amount = 1);
+	bool AddDashCharge(int Amount = 1);
 
 	/** Safely add a dash charge */
 	UFUNCTION(BlueprintCallable)
-    void AddExplosiveGrenades(int Amount = 1);
+    bool AddExplosiveGrenades(int Amount = 1);
 
 	/** Safely add a dash charge */
 	UFUNCTION(BlueprintCallable)
-    void AddFreezeGrenades(int Amount = 1);
+    bool AddFreezeGrenades(int Amount = 1);
 
 	/** Safely add stamina */
 	UFUNCTION(BlueprintCallable)
-	void AddStamina(float Amount);
+	bool AddStamina(float Amount);
 
 	UFUNCTION(BlueprintCallable)
 	void SetLastCheckpoint(FTransform Checkpoint);

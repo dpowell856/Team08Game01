@@ -55,9 +55,9 @@ ATwoTheEdgeCharacter::ATwoTheEdgeCharacter()
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 }
 
-void ATwoTheEdgeCharacter::OnPossessed_Implementation()
+void ATwoTheEdgeCharacter::OnPossessed_Implementation(AController* NewController)
 {
-	PossessedServer();
+	PossessedServer(NewController);
 }
 
 //////////////////////////////////////////////////////////////////////////
@@ -197,13 +197,15 @@ void ATwoTheEdgeCharacter::RespawnOnHost_Implementation()
 	OnRespawn();
 }
 
-void ATwoTheEdgeCharacter::CreatePlayerName_Implementation()
+void ATwoTheEdgeCharacter::CreatePlayerName_Implementation(APlayerCameraManager* CameraManager)
 {
 	// Hide the player name text if it's the local player.
 	if (UGameplayStatics::GetPlayerCharacter(GetWorld(), 0) != this)
 	{
 		APlayerNameHeader* NameHeader = Cast<APlayerNameHeader>(
             GetWorld()->SpawnActor(PlayerNameClass, &GetTransform()));
+
+		NameHeader->CameraManager = CameraManager;
 
 		// Gets the player name of this pawn's owner.
 		APlayerState* ThisPlayerState = GetPlayerState();
@@ -321,4 +323,11 @@ void ATwoTheEdgeCharacter::MoveRight(float Value)
 		// add movement in that direction
 		AddMovementInput(Direction, Value);
 	}
+}
+
+void ATwoTheEdgeCharacter::Jump()
+{
+	Super::Jump();
+
+	OnJump();
 }

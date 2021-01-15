@@ -21,6 +21,9 @@ public:
 	UTextRenderComponent* TextRenderComponent;
 
 	AActor* ActorToFollow;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	APlayerCameraManager* CameraManager;
 	
 
 protected:

@@ -53,6 +53,8 @@ protected:
 	/** Called for side to side input */
 	void MoveRight(float Value);
 
+	virtual void Jump() override;
+
 	/** 
 	 * Called via input to turn at a given rate. 
 	 * @param Rate	This is a normalized rate, i.e. 1.0 means 100% of desired turn rate
@@ -88,7 +90,7 @@ protected:
 
 	/** Creates the names over the players' heads */
 	UFUNCTION(Client, Reliable, BlueprintCallable)
-	void CreatePlayerName();
+	void CreatePlayerName(APlayerCameraManager* CameraManager);
 
 	UFUNCTION(BlueprintCallable)
 	void Respawn();
@@ -106,9 +108,9 @@ protected:
 
 	
 	UFUNCTION(NetMulticast, Reliable, BlueprintCallable)
-	void OnPossessed();
+	void OnPossessed(AController* NewController);
 	UFUNCTION(BlueprintImplementableEvent)
-	void PossessedServer();
+	void PossessedServer(AController* NewController);
 
 	UFUNCTION(BlueprintCallable)
 	void RequestGrenadeThrow(const int32& GrenadeType);
@@ -120,6 +122,9 @@ protected:
     void GrenadeThrowNetCast(const int32& GrenadeType);
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnGrenadeThrow(const int32& GrenadeType);
+
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnJump();
 
 	UFUNCTION(BlueprintCallable)
 	int32 GetCurrentJumpCount() const { return JumpCurrentCount; }

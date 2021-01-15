@@ -11,28 +11,44 @@ void ATwoTheEdgePlayerState::BeginPlay()
     NextCheckpointNum = 1;
 }
 
-void ATwoTheEdgePlayerState::AddDashCharge(const int Amount)
+bool ATwoTheEdgePlayerState::AddDashCharge(const int Amount)
 {
+    if (DashCharges >= 3)
+        return false;
+    
     DashCharges = UKismetMathLibrary::Min(DashCharges + Amount, 3);
-    GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("Dash Charges: %d"), DashCharges));
+    //GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("Dash Charges: %d"), DashCharges));
+    return true;
 }
 
-void ATwoTheEdgePlayerState::AddExplosiveGrenades(int Amount)
+bool ATwoTheEdgePlayerState::AddExplosiveGrenades(int Amount)
 {
+    if (ExplosiveGrenades >= 2)
+        return false;
+    
     ExplosiveGrenades = UKismetMathLibrary::Min(ExplosiveGrenades + Amount, 2);
-    GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("Explosive Grenades: %d"), ExplosiveGrenades));
+    //GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("Explosive Grenades: %d"), ExplosiveGrenades));
+    return true;
 }
 
-void ATwoTheEdgePlayerState::AddFreezeGrenades(int Amount)
+bool ATwoTheEdgePlayerState::AddFreezeGrenades(int Amount)
 {
+    if (FreezeGrenades >= 2)
+        return false;
+    
     FreezeGrenades = UKismetMathLibrary::Min(FreezeGrenades + Amount, 2);
-    GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("Freeze Grenades: %d"), FreezeGrenades));
+    //GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("Freeze Grenades: %d"), FreezeGrenades));
+    return true;
 }
 
-void ATwoTheEdgePlayerState::AddStamina(const float Amount)
+bool ATwoTheEdgePlayerState::AddStamina(const float Amount)
 {
-    Stamina = UKismetMathLibrary::Min(Stamina + Amount, 20.f);
-    GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("Stamina: %f"), Stamina));
+    if (Stamina >= 6.f)
+        return false;
+    
+    Stamina = UKismetMathLibrary::Min(Stamina + Amount, 6.f);
+    //GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, FString::Printf(TEXT("Stamina: %f"), Stamina));
+    return true;
 }
 
 void ATwoTheEdgePlayerState::SetLastCheckpoint(FTransform CheckpointPos)
