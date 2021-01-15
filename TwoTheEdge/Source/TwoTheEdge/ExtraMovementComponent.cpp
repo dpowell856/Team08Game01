@@ -81,7 +81,7 @@ void UExtraMovementComponent::ChangeWalkSpeed_Implementation(float NewSpeed)
 void UExtraMovementComponent::ForwardDash_Implementation()
 {
 	// On cooldown.
-	if (GetWorld()->GetTimerManager().IsTimerActive(DashDelayHandle))
+	if (GetDashOnDelay())
 		return;
 
 	const FVector LaunchVelocity = Character->GetMesh()->GetRightVector() * DashPower;

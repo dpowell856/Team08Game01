@@ -3,16 +3,21 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameModeBase.h"
+#include "EPlayerColour.h"
+#include "GameFramework/GameMode.h"
 #include "TwoTheEdgeGameMode.generated.h"
 
 UCLASS(minimalapi)
-class ATwoTheEdgeGameMode : public AGameModeBase
+class ATwoTheEdgeGameMode : public AGameMode
 {
 	GENERATED_BODY()
 
 public:
 	ATwoTheEdgeGameMode();
+	virtual void PostLogin(APlayerController* NewPlayer) override;
+
+private:
+	uint8 NextPlayerColour = EPlayerColour::Cyan;
 };
 
 

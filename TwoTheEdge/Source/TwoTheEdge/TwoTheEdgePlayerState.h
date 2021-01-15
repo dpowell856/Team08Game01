@@ -3,6 +3,8 @@
 #pragma once
 
 #include "CoreMinimal.h"
+
+#include "EPlayerColour.h"
 #include "GameFramework/PlayerState.h"
 #include "TwoTheEdgePlayerState.generated.h"
 
@@ -16,6 +18,11 @@ class TWOTHEEDGE_API ATwoTheEdgePlayerState : public APlayerState
 
 	public:
 
+	virtual void BeginPlay() override;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	uint8 PlayerColour;
+
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	FTransform LastCheckpointPos;
 
@@ -24,6 +31,12 @@ class TWOTHEEDGE_API ATwoTheEdgePlayerState : public APlayerState
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	int DashCharges;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	int ExplosiveGrenades;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
+	int FreezeGrenades;
 	
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 	float Stamina;
@@ -31,6 +44,14 @@ class TWOTHEEDGE_API ATwoTheEdgePlayerState : public APlayerState
 	/** Safely add a dash charge */
 	UFUNCTION(BlueprintCallable)
 	void AddDashCharge(int Amount = 1);
+
+	/** Safely add a dash charge */
+	UFUNCTION(BlueprintCallable)
+    void AddExplosiveGrenades(int Amount = 1);
+
+	/** Safely add a dash charge */
+	UFUNCTION(BlueprintCallable)
+    void AddFreezeGrenades(int Amount = 1);
 
 	/** Safely add stamina */
 	UFUNCTION(BlueprintCallable)
@@ -41,5 +62,13 @@ class TWOTHEEDGE_API ATwoTheEdgePlayerState : public APlayerState
 
 	UFUNCTION(BlueprintCallable)
 	FTransform GetLastCheckpoint();
+
+	UFUNCTION()
+	void SetPlayerColour(const uint8 Colour) { PlayerColour = Colour; }
+
+	UPROPERTY(BlueprintReadWrite)
+	int NextCheckpointNum;
+
+	void UpdateNextCheckpointNum();
 
 };

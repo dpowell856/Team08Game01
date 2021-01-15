@@ -38,6 +38,11 @@ void ACheckPoint::Tick(float DeltaTime)
 
 }
 
+int ACheckPoint::GetCheckPointOrder()
+{
+	return CheckPointOrder;
+}
+
 void ACheckPoint::OnOverLapBegin(UPrimitiveComponent* OverLappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bfromSweep, const FHitResult& SweepResult)
 {
 	if (OtherActor->IsA(ATwoTheEdgeCharacter::StaticClass()))
@@ -48,7 +53,11 @@ void ACheckPoint::OnOverLapBegin(UPrimitiveComponent* OverLappedComp, AActor* Ot
 		if (!PlayerState)
 			return;
 		
-		PlayerState->SetLastCheckpoint(GetActorTransform());
+		if (PlayerState->NextCheckpointNum == this->CheckPointOrder) 
+        {
+        	//GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "This Checkpoint works 2");
+        	PlayerState->SetLastCheckpoint(this->GetActorTransform());
+        }
 	}
 }
 

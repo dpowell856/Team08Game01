@@ -43108,11 +43108,13 @@
       <e p="UE4Game.Target.cs" t="Include" />
     </e>
     <e p="S:\Users\Liamk\Development\Games\Team08Game01\TwoTheEdge" t="IncludeFlat">
+      <e p="Binaries.zip" t="Include" />
       <e p="Config" t="Include">
         <e p="DefaultEditor.ini" t="Include" />
         <e p="DefaultEditorPerProjectUserSettings.ini" t="Include" />
         <e p="DefaultEngine.ini" t="Include" />
         <e p="DefaultGame.ini" t="Include" />
+        <e p="DefaultGameplayTags.ini" t="Include" />
         <e p="DefaultInput.ini" t="Include" />
       </e>
       <e p="Engine" t="Include" />
@@ -43148,18 +43150,30 @@
           <e p="UnrealCLR.uplugin" t="Include" />
         </e>
       </e>
+      <e p="Plugins.zip" t="Include" />
       <e p="Source" t="Include">
         <e p="TwoTheEdge" t="Include">
+          <e p="BouncePad.cpp" t="Include" />
+          <e p="BouncePad.h" t="Include" />
+          <e p="Bullet.cpp" t="Include" />
+          <e p="Bullet.h" t="Include" />
+          <e p="CheckPoint.cpp" t="Include" />
+          <e p="CheckPoint.h" t="Include" />
+          <e p="EPlayerColour.h" t="Include" />
           <e p="ExtraMovementComponent.cpp" t="Include" />
           <e p="ExtraMovementComponent.h" t="Include" />
           <e p="Grenade.cpp" t="Include" />
           <e p="Grenade.h" t="Include" />
           <e p="LobbyPlayerController.cpp" t="Include" />
           <e p="LobbyPlayerController.h" t="Include" />
+          <e p="NetworkCheats.cpp" t="Include" />
+          <e p="NetworkCheats.h" t="Include" />
           <e p="Pickup.cpp" t="Include" />
           <e p="Pickup.h" t="Include" />
           <e p="PlayerNameHeader.cpp" t="Include" />
           <e p="PlayerNameHeader.h" t="Include" />
+          <e p="Turret.cpp" t="Include" />
+          <e p="Turret.h" t="Include" />
           <e p="TwoTheEdge.Build.cs" t="Include" />
           <e p="TwoTheEdge.cpp" t="Include" />
           <e p="TwoTheEdge.h" t="Include" />
@@ -43167,6 +43181,8 @@
           <e p="TwoTheEdgeCharacter.h" t="Include" />
           <e p="TwoTheEdgeGameMode.cpp" t="Include" />
           <e p="TwoTheEdgeGameMode.h" t="Include" />
+          <e p="TwoTheEdgeGameState.cpp" t="Include" />
+          <e p="TwoTheEdgeGameState.h" t="Include" />
           <e p="TwoTheEdgePlayerState.cpp" t="Include" />
           <e p="TwoTheEdgePlayerState.h" t="Include" />
         </e>

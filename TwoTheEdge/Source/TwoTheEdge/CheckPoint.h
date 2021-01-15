@@ -26,6 +26,12 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
 		class UBoxComponent* CollisionBox;
 
+	UPROPERTY(EditAnywhere, meta = (AllowPrivateAccess = "true"))
+	int CheckPointOrder;
+
+	UFUNCTION(BlueprintCallable)
+	int GetCheckPointOrder();
+
 	UFUNCTION()
 		void OnOverLapBegin(UPrimitiveComponent* OverLappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bfromSweep, const FHitResult& SweepResult);
 };

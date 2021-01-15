@@ -55,6 +55,11 @@ ATwoTheEdgeCharacter::ATwoTheEdgeCharacter()
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
 }
 
+void ATwoTheEdgeCharacter::OnPossessed_Implementation()
+{
+	PossessedServer();
+}
+
 //////////////////////////////////////////////////////////////////////////
 // Input
 void ATwoTheEdgeCharacter::SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent)
@@ -100,8 +105,6 @@ void ATwoTheEdgeCharacter::SetupPlayerInputComponent(class UInputComponent* Play
 void ATwoTheEdgeCharacter::BeginPlay()
 {
 	Super::BeginPlay();
-
-	CreatePlayerName();
 }
 
 void ATwoTheEdgeCharacter::OnResetVR()
@@ -147,12 +150,19 @@ void ATwoTheEdgeCharacter::ForwardDash()
 	
 	if (CastedPlayerState->DashCharges > 0)
 	{
-		ExtraMovement->ForwardDash();
+		if (ExtraMovement->GetDashOnDelay())
+		{
+			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, TEXT("Dash on delay"));
+			return;
+		}
+		
 		CastedPlayerState->DashCharges--;
-	}
 
-	// Blueprint event.
-	OnForwardDash();
+		ExtraMovement->ForwardDash();
+		
+		// Blueprint event.
+		OnForwardDash();
+	}
 }
 
 void ATwoTheEdgeCharacter::Respawn()
@@ -195,7 +205,22 @@ void ATwoTheEdgeCharacter::CreatePlayerName_Implementation()
 		APlayerNameHeader* NameHeader = Cast<APlayerNameHeader>(
             GetWorld()->SpawnActor(PlayerNameClass, &GetTransform()));
 
-		NameHeader->Initialise(TEXT("What?"), FColor::Orange, this);
+		// Gets the player name of this pawn's owner.
+		APlayerState* ThisPlayerState = GetPlayerState();
+		ATwoTheEdgePlayerState* Re = Cast<ATwoTheEdgePlayerState>(ThisPlayerState);
+
+		FString PlayerName;
+		if (ThisPlayerState)
+		{
+			PlayerName = GetPlayerState()->GetPlayerName();
+			GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Red, FString::FromInt(Re->PlayerColour));
+		}
+		else
+			PlayerName = "Nameless";
+		
+		// Caps the name's length.
+		PlayerName = PlayerName.Left(15);
+		NameHeader->Initialise(PlayerName, FColor::Orange, this);
 	}
 }
 
@@ -205,6 +230,57 @@ void ATwoTheEdgeCharacter::TeleportOnServer_Implementation(const FVector& DestLo
 	TeleportTo(DestLocation, DestRotation);
 }
 
+void ATwoTheEdgeCharacter::RequestGrenadeThrow(const int32& GrenadeType)
+{
+	ATwoTheEdgePlayerState* CastedPlayerState = GetPlayerState<ATwoTheEdgePlayerState>();
+
+	switch (GrenadeType)
+	{
+		case 0:
+			if (CastedPlayerState->ExplosiveGrenades > 0)
+				CastedPlayerState->ExplosiveGrenades--;
+			else
+				return;
+		break;
+		case 1:
+			if (CastedPlayerState->FreezeGrenades > 0)
+				CastedPlayerState->FreezeGrenades--;
+			else
+				return;
+		break;
+		default:
+			return;
+	}
+		
+	// If host
+	if (HasAuthority())
+	{
+		// Shows respawn animation to self and other players.
+		GrenadeThrowServer(GrenadeType);
+	}
+	else
+	{
+		// Sending info to server and client works perfectly.
+		// The problem is sending the info from the server to other clients.
+		GrenadeThrowServer(GrenadeType);
+		GrenadeThrowClient(GrenadeType);
+	}
+}
+
+void ATwoTheEdgeCharacter::GrenadeThrowServer_Implementation(const int32& GrenadeType)
+{
+	OnGrenadeThrow(GrenadeType);
+}
+
+void ATwoTheEdgeCharacter::GrenadeThrowClient_Implementation(const int32& GrenadeType)
+{
+	OnGrenadeThrow(GrenadeType);
+}
+
+void ATwoTheEdgeCharacter::GrenadeThrowNetCast_Implementation(const int32& GrenadeType)
+{
+	OnGrenadeThrow(GrenadeType);
+}
 
 void ATwoTheEdgeCharacter::TurnAtRate(float Rate)
 {

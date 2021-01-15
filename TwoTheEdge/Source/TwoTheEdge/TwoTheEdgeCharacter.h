@@ -37,6 +37,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	UClass* PlayerNameClass;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	TArray<UTexture*> PlayerColourTextures;
+
 protected:
 
 	virtual void BeginPlay() override;
@@ -84,7 +87,7 @@ protected:
 	void OnForwardDash();
 
 	/** Creates the names over the players' heads */
-	UFUNCTION(Client, Reliable)
+	UFUNCTION(Client, Reliable, BlueprintCallable)
 	void CreatePlayerName();
 
 	UFUNCTION(BlueprintCallable)
@@ -100,6 +103,26 @@ protected:
 
 	UFUNCTION(BlueprintCallable, Server, Reliable)
 	void TeleportOnServer(const FVector& DestLocation, const FRotator& DestRotation);
+
+	
+	UFUNCTION(NetMulticast, Reliable, BlueprintCallable)
+	void OnPossessed();
+	UFUNCTION(BlueprintImplementableEvent)
+	void PossessedServer();
+
+	UFUNCTION(BlueprintCallable)
+	void RequestGrenadeThrow(const int32& GrenadeType);
+	UFUNCTION(Server, Reliable)
+	void GrenadeThrowServer(const int32& GrenadeType);
+	UFUNCTION(Client, Reliable)
+	void GrenadeThrowClient(const int32& GrenadeType);
+	UFUNCTION(NetMulticast, Reliable)
+    void GrenadeThrowNetCast(const int32& GrenadeType);
+	UFUNCTION(BlueprintImplementableEvent)
+	void OnGrenadeThrow(const int32& GrenadeType);
+
+	UFUNCTION(BlueprintCallable)
+	int32 GetCurrentJumpCount() const { return JumpCurrentCount; }
 	
 protected:
 	// APawn interface

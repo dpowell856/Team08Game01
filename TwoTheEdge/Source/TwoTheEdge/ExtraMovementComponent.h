@@ -48,6 +48,8 @@ public:
 	UFUNCTION(Server, Reliable)
 	void ForwardDash();
 
+	bool GetDashOnDelay() const { return GetWorld()->GetTimerManager().IsTimerActive(DashDelayHandle); }
+
 private:
 	float MaxWalkSpeed;
 	class ATwoTheEdgeCharacter* Character;
