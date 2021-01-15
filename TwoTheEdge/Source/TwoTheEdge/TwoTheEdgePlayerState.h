@@ -45,7 +45,7 @@ class TWOTHEEDGE_API ATwoTheEdgePlayerState : public APlayerState
 	float Stamina;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite)
-	bool Finished;
+	int32 Finished = -1;
 
 	
 	/** Safely add a dash charge */

@@ -41,7 +41,7 @@ public:
 	/** Requests the player to walk */
 	void Walk();
 
-	UFUNCTION(Server, Reliable)
+	UFUNCTION(Server, Reliable, BlueprintCallable)
     void ChangeWalkSpeed(float NewSpeed);
 
 	/** Server side dash logic */
