@@ -35,6 +35,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float DashDelay = 5.f;
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	bool bSprinting = false;
+
 	/** Requests the player to sprint */
 	void Sprint();
 
@@ -54,6 +57,5 @@ private:
 	float MaxWalkSpeed;
 	class ATwoTheEdgeCharacter* Character;
 	FTimerHandle DashDelayHandle;
-	bool bSprinting = false;
 	bool bDashing;
 };
