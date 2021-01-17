@@ -2,7 +2,6 @@
 
 
 #include "Bullet.h"
-
 #include "GameFramework/ProjectileMovementComponent.h"
 
 // Sets default values
@@ -34,5 +33,13 @@ void ABullet::Activate(float AdditionalVelocity, float AdditionalDamage, float A
 
 	FTimerHandle LifetimeHandle;
 	GetWorld()->GetTimerManager().SetTimer(LifetimeHandle, this, &ABullet::OnLifetimeExceeded, Lifetime);
+}
+
+int ABullet::GetNetMode()
+{
+	UE_LOG(LogTemp, Warning, TEXT("LS: %d"), NM_ListenServer);
+	UE_LOG(LogTemp, Warning, TEXT("CL: %d"), NM_Client);
+
+	return GEngine->GetNetMode(GetWorld());
 }
 

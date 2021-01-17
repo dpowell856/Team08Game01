@@ -81,10 +81,13 @@ private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category=Rotation, meta = (AllowPrivateAccess = "true"))
 	AActor* CurrentTarget;
-	
+
 	void UpdateRotation(float DeltaTime);
 	void UpdateFiring(float DeltaTime);
+	UFUNCTION(Client, Reliable)
 	void Fire();
+	UFUNCTION(Server, Reliable)
+    void FireServer();
 	void CheckFireCondition();
 	void StartReload();
 	void FinishReload();

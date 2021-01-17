@@ -25,6 +25,12 @@
   <component name="ChangeListManager">
     <list default="true" id="f4372eb3-064e-41e7-9110-974e2690450e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TwoTheEdge/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Actors/BP_BaseBullet.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Actors/BP_BaseBullet.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Actors/BP_LaserBullet.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Actors/BP_LaserBullet.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/Bullet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/Bullet.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/Bullet.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/Bullet.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/Turret.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/Turret.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/TwoTheEdge/Turret.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/TwoTheEdge/Turret.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,11 +47,6 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Source/TwoTheEdge/Bullet.h" />
-      <option value="$PROJECT_DIR$/Source/TwoTheEdge/Turret.h" />
-      <option value="$PROJECT_DIR$/Source/TwoTheEdge/Bullet.cpp" />
-      <option value="$PROJECT_DIR$/Source/TwoTheEdge/Turret.cpp" />
-      <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.cpp" />
       <option value="$PROJECT_DIR$/Source/TwoTheEdge/EPlayerColour.h" />
       <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeGameMode.h" />
       <option value="$PROJECT_DIR$/Source/TwoTheEdge/NetworkCheats.h" />
@@ -60,8 +61,14 @@
       <option value="$PROJECT_DIR$/Source/TwoTheEdge/PlayerNameHeader.h" />
       <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeCharacter.cpp" />
       <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgeGameState.h" />
-      <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.h" />
       <option value="$PROJECT_DIR$/Source/TwoTheEdge/TwoTheEdgePlayerState.h" />
+      <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.cpp" />
+      <option value="$PROJECT_DIR$/Source/TwoTheEdge/ExtraMovementComponent.h" />
+      <option value="$PROJECT_DIR$/Source/TwoTheEdge/Bullet.h" />
+      <option value="$PROJECT_DIR$/Source/TwoTheEdge/Bullet.cpp" />
+      <option value="$PROJECT_DIR$/Source/TwoTheEdge/Turret.h" />
+      <option value="$PROJECT_DIR$/Source/TwoTheEdge/Turret.cpp" />
+      <option value="$PROJECT_DIR$/Source/TwoTheEdge/PlayerNameHeader.cpp" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1msvnxTmf687yng9rJAkWkMsEai" />
@@ -306,6 +313,8 @@
       <workItem from="1610494262282" duration="4844000" />
       <workItem from="1610529001309" duration="40046000" />
       <workItem from="1610618671512" duration="25343000" />
+      <workItem from="1610838440151" duration="779000" />
+      <workItem from="1610896030069" duration="8799000" />
     </task>
     <servers />
   </component>

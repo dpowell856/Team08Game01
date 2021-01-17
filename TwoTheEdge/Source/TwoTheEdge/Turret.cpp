@@ -92,7 +92,7 @@ void ATurret::UpdateFiring(float DeltaTime)
 	}
 }
 
-void ATurret::Fire()
+void ATurret::Fire_Implementation()
 {
 	CurrentMagSize--;
 
@@ -102,7 +102,27 @@ void ATurret::Fire()
 		const FRotator SpawnRotation = BulletSpawnPoint->GetComponentRotation();
 
 		ABullet* TempBullet = GetWorld()->SpawnActor<ABullet>(BulletActor, SpawnLocation, SpawnRotation);
-		TempBullet->SetOwner(this);
+		TempBullet->Activate(BulletVelocity, BulletDamage, BulletMaxRange);
+	}
+	else
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, TEXT("Turret: BulletActor or BulletSpawnPoint not set"));
+		return;
+	}
+
+	//GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Blue, TEXT("Fired"));
+}
+
+void ATurret::FireServer_Implementation()
+{
+	CurrentMagSize--;
+
+	if (BulletActor && BulletSpawnPoint)
+	{
+		const FVector SpawnLocation = BulletSpawnPoint->GetComponentLocation();
+		const FRotator SpawnRotation = BulletSpawnPoint->GetComponentRotation();
+
+		ABullet* TempBullet = GetWorld()->SpawnActor<ABullet>(BulletActor, SpawnLocation, SpawnRotation);
 		TempBullet->Activate(BulletVelocity, BulletDamage, BulletMaxRange);
 	}
 	else
@@ -117,10 +137,13 @@ void ATurret::Fire()
 void ATurret::CheckFireCondition()
 {
 	// If reloading...
-	if (GetWorld()->GetTimerManager().IsTimerActive(ReloadHandle))
-		return;
-	
-	Fire();
+	/*if (GetWorld()->GetTimerManager().IsTimerActive(ReloadHandle))
+		return;*/
+
+	if (HasAuthority())
+		FireServer();
+	else
+		Fire();
 }
 
 void ATurret::StartReload()

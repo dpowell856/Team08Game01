@@ -31,6 +31,9 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void OnLifetimeExceeded();
 
+	UFUNCTION(BlueprintCallable)
+	int GetNetMode();
+
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Components", meta = (AllowPrivateAccess = "true"))
 	UStaticMeshComponent* ProjectileMesh;
