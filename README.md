@@ -7,5 +7,5 @@ Contributors:
 - Louis MILLS (Design)
 - Ethan GANGOTRA (Design)
 - Mo PATEL (Design)
-- Henry (Design)
-- Kea (Design)
+- Henry KIRK (Design)
+- Keamuhetsi SIBANDA (Design)
